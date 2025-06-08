@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>กำลังพาคุณไปยัง TikTok...</title>
+  <title>กดเพื่อไปดูสินค้าใน TikTok Shop</title>
 
   <!-- Facebook Pixel -->
   <script>
@@ -18,7 +17,7 @@
     'script','https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '127978927946856');
-    fbq('track', 'Purchase', {value: 0.00, currency: 'THB'});
+    fbq('track', 'PageView');
   </script>
 
   <!-- TikTok Pixel -->
@@ -52,14 +51,7 @@
         };
         ttq.load('D0EVS2JC77U9C23772EG');
         ttq.page();
-        ttq.track('CompletePayment');
     }(window, document, 'ttq');
-  </script>
-
-  <script>
-    setTimeout(() => {
-      window.location.href = "https://vt.tiktok.com/ZSkrwuC9n";
-    }, 1500);
   </script>
 
   <style>
@@ -69,16 +61,39 @@
       font-family: sans-serif;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
     h1 {
-      font-size: 18px;
+      font-size: 20px;
       color: #333;
+      margin-bottom: 20px;
+    }
+    a.button {
+      background-color: #fe2c55;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <h1>กำลังพาคุณไปยัง TikTok...</h1>
+  <h1>✨ สินค้าพิเศษใน TikTok Shop<br>กดดูโปรฯ และช้อปเลย!</h1>
+  <a class="button" href="https://vt.tiktok.com/ZSkrwuC9n" target="_blank"
+     onclick="
+       fbq('track', 'Purchase', {value: 0.00, currency: 'THB'});
+       ttq.track('CompletePayment');
+     ">👉 กดที่นี่เพื่อไปดูใน TikTok</a>
+  <div class="note">กดปุ่มเพื่อไปหน้า TikTok Shop อย่างเป็นทางการ</div>
 </body>
 </html>
