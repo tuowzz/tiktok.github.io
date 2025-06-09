@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🎁 รับสิทธิพิเศษใน TikTok Shop!</title>
+  <title>กำลังนำคุณไปยังตะกร้าใน TikTok Shop...</title>
 
   <!-- Facebook Pixel -->
   <script>
@@ -17,7 +17,7 @@
     'script','https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '127978927946856');
-    fbq('track', 'PageView');
+    fbq('track', 'Purchase', {value: 0.00, currency: 'THB'});
   </script>
 
   <!-- TikTok Pixel -->
@@ -51,7 +51,14 @@
         };
         ttq.load('D0EVS2JC77U9C23772EG');
         ttq.page();
+        ttq.track('CompletePayment');
     }(window, document, 'ttq');
+  </script>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://vt.tiktok.com/ZSkrwuC9n"; // ใส่ลิงก์ TikTok Shop ของคุณ
+    }, 2000); // 2 วินาที ให้ Pixel ยิงทัน
   </script>
 
   <style>
@@ -75,67 +82,11 @@
     p {
       font-size: 16px;
       color: #555;
-      margin-bottom: 20px;
-    }
-    .countdown {
-      font-size: 18px;
-      color: #e53935;
-      margin-bottom: 20px;
-    }
-    a.button {
-      background-color: #fe2c55;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      cursor: pointer;
-      opacity: 0.5;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      animation: pulse 1.5s infinite;
-    }
-    a.button.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .note {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #777;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
-  <h1>🎁 รับสิทธิพิเศษใน TikTok Shop!</h1>
-  <p>กดปุ่มด้านล่างเพื่อดูโปรฯ และสินค้าเด็ด!<br>สิทธิ์มีจำนวนจำกัด อย่าพลาดนะคะ 😊</p>
-  <div class="countdown">กรุณารอสักครู่... (<span id="timer">3</span> วินาที)</div>
-  <a id="goButton" class="button" href="https://vt.tiktok.com/ZSkrwuC9n" target="_blank"
-     onclick="
-       fbq('track', 'Purchase', {value: 0.00, currency: 'THB'});
-       ttq.track('CompletePayment');
-     ">👉 กดที่นี่เพื่อไปดูใน TikTok</a>
-  <div class="note">* ต้องกดปุ่มนี้เท่านั้นเพื่อรับสิทธิ์</div>
-
-  <script>
-    let timeLeft = 3;
-    const timerEl = document.getElementById('timer');
-    const buttonEl = document.getElementById('goButton');
-
-    const countdown = setInterval(() => {
-      timeLeft--;
-      timerEl.textContent = timeLeft;
-      if (timeLeft <= 0) {
-        clearInterval(countdown);
-        document.querySelector('.countdown').style.display = 'none';
-        buttonEl.classList.add('active');
-      }
-    }, 1000);
-  </script>
+  <h1>🛒 กำลังนำคุณไปยังตะกร้าใน TikTok Shop...</h1>
+  <p>กรุณารอสักครู่ ระบบกำลังพาคุณไปที่หน้าชำระเงิน</p>
 </body>
 </html>
